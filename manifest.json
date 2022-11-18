@@ -9,7 +9,7 @@
     "app-plus" : {
         "usingComponents" : true,
         "nvueStyleCompiler" : "uni-app",
-        "compilerVersion" : 3,
+        "compilerVersion" : 3,	
         "splashscreen" : {
             "alwaysShowBeforeRender" : true,
             "waiting" : true,
@@ -46,13 +46,32 @@
             "sdkConfigs" : {}
         }
     },
-    /* 快应用特有相关 */
+   // H5相关 跨域
+   "h5":{
+   	"devServer": {
+   		"proxy":{
+			"/api":{
+				"changeOrigin":true,
+				"target" :"https://mock.mengxuegu.com/mock/5fdc6ffb5b350029c77c973a/mxg-education-app",
+				"pathRewrite":{
+					"^/api":""
+				}
+			}
+		}
+   	}
+   },
+   
+	
+	/*快应用特有相关 */
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "",
+        "appid" : "Reinitialized existing Git repository in D:/桌面/lml-edu/.git/",
         "setting" : {
-            "urlCheck" : false
+            "urlCheck" : false,
+            "postcss" : true,
+            "es6" : true,
+            "minified" : true
         },
         "usingComponents" : true
     },

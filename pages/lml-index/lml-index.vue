@@ -1,7 +1,7 @@
 <template>
 	<!-- 首页 -->
 	<view>
-		 首页 
+		 <!-- 首页 -->
 	</view>
 </template>
 

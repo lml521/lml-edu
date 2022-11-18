@@ -5,8 +5,36 @@
             "path" : "pages/lml-index/lml-index",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
+				"navigationBarTextStyle":"white", //导航栏标题颜色，仅支持 black / white
+				"navigationBarBackgroundColor":"#345DC2",// 导航栏背景演示
+				"app-plus": {
+					// "bounce":"none",//页面回弹效果，设置为 "none" 时关闭效果
+					"titleNView":{//导航栏
+					"type":"transparent",//导航栏样式。"default"-默认样式；"transparent"-滚动透明渐变；"float"-悬浮导航栏。
+					"searchInput":{//原生导航栏上的搜索框配置
+						"autoFocus":true,//是否自动获取焦点
+						"align":"center",//居中对齐
+						"placeholder":"搜索你想要的的内容",// 提示文本
+						"disabled":true,  //是否可输入
+						"placeholderColor": "#979C9D",//提示文本颜色
+						"borderRadius":"30rpx",//圆角边框
+						// 设置输入框背景颜色
+						"backgroundColor": "#F0F1F2"
+					}
+					// #ifdef APP-PLUS
+					,
+					"buttons":[{
+						"float":"right",//按钮在标题栏上的显示位置，可取值"left"、"right"
+						"fontSrc":"/static/icon/iconfont.ttf",//按钮上文字使用的字体文件路径。不支持网络地址，请统一使用本地地址。
+						"text":"\ue689",//按钮上显示的文字。使用字体图标时 unicode 字符表示必须 '\u' 开头，如 "\ue123"（注意不能写成"\e123"）。
+						"fontSize": "27",//按钮上文字大小
+						"background": "rgba(0,0,0,0)"//按钮的背景颜色，仅在标题栏type=transparent时生效
+					}]
+				// #endif
+						
+					}
+				}
+				
             }
             },{
 			// 分类
