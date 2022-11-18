@@ -2,6 +2,7 @@
   "navigationBarTextStyle": "white",
   "navigationBarBackgroundColor": "#345DC2",
   "usingComponents": {
-    "search-input": "/components/search-input/search-input"
+    "search-input": "/components/search-input/search-input",
+    "swiper": "/components/swiper/swiper"
   }
 }

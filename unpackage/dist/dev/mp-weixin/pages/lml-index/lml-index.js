@@ -138,7 +138,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var searchInput = function searchInput() {__webpack_require__.e(/*! require.ensure | components/search-input/search-input */ "components/search-input/search-input").then((function () {return resolve(__webpack_require__(/*! @/components/search-input/search-input.vue */ 44));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var searchInput = function searchInput() {__webpack_require__.e(/*! require.ensure | components/search-input/search-input */ "components/search-input/search-input").then((function () {return resolve(__webpack_require__(/*! @/components/search-input/search-input.vue */ 44));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var Swiper = function Swiper() {__webpack_require__.e(/*! require.ensure | components/swiper/swiper */ "components/swiper/swiper").then((function () {return resolve(__webpack_require__(/*! @/components/swiper/swiper.vue */ 54));}).bind(null, __webpack_require__)).catch(__webpack_require__.oe);};var _default =
 
 
 
@@ -157,13 +157,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-
-
-
-//微信小程序 搜索框
-var _default = {
+{
   components: {
-    searchInput: searchInput },
+    searchInput: searchInput,
+    Swiper: Swiper },
 
   data: function data() {
     return {};
