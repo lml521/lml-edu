@@ -1,0 +1,99 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+	{
+		// 首页
+            "path" : "pages/lml-index/lml-index",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            },{
+			// 分类
+            "path" : "pages/lml-category/lml-category",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+			// 阅读 
+            "path" : "pages/lml-article/lml-article",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+			// 问答
+            "path" : "pages/lml-question/lml-question",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+        ,{
+			// 我的
+            "path" : "pages/lml-user/lml-user",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
+	// tabBar 数据 
+	"tabBar": {
+		"list":[
+			// 首页 
+			{
+				"pagePath": "pages/lml-index/lml-index",
+				"text": "首页",
+				"iconPath": "static/tab/index.png",
+				"selectedIconPath": "static/tab/index-active.png"
+			},
+			// 分类 
+			{
+				"pagePath": "pages/lml-category/lml-category",
+				"text": "分类",
+				"iconPath": "static/tab/category.png",
+				"selectedIconPath": "static/tab/category-active.png"
+			},
+			// 阅读 
+			{
+				"pagePath": "pages/lml-article/lml-article",
+				"text": "阅读",
+				"iconPath": "static/tab/article.png",
+				"selectedIconPath": "static/tab/article-active.png"
+			},
+			// 问答 
+			{
+				"pagePath": "pages/lml-question/lml-question",
+				"text": "阅读",
+				"iconPath": "static/tab/question.png",
+				"selectedIconPath": "static/tab/question-active.png"
+			},
+			// 我的 
+			{
+				"pagePath": "pages/lml-user/lml-user",
+				"text": "我的",
+				"iconPath": "static/tab/my.png",
+				"selectedIconPath": "static/tab/my-active.png"
+			}
+		]
+	},
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"uniIdRouter": {}
+}
