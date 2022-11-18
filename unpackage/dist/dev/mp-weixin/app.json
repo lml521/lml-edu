@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/lml-index/lml-index",
+    "pages/lml-category/lml-category",
+    "pages/lml-article/lml-article",
+    "pages/lml-question/lml-question",
+    "pages/lml-user/lml-user"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/lml-index/lml-index",
+        "text": "首页",
+        "iconPath": "static/tab/index.png",
+        "selectedIconPath": "static/tab/index-active.png"
+      },
+      {
+        "pagePath": "pages/lml-category/lml-category",
+        "text": "分类",
+        "iconPath": "static/tab/category.png",
+        "selectedIconPath": "static/tab/category-active.png"
+      },
+      {
+        "pagePath": "pages/lml-article/lml-article",
+        "text": "阅读",
+        "iconPath": "static/tab/article.png",
+        "selectedIconPath": "static/tab/article-active.png"
+      },
+      {
+        "pagePath": "pages/lml-question/lml-question",
+        "text": "阅读",
+        "iconPath": "static/tab/question.png",
+        "selectedIconPath": "static/tab/question-active.png"
+      },
+      {
+        "pagePath": "pages/lml-user/lml-user",
+        "text": "我的",
+        "iconPath": "static/tab/my.png",
+        "selectedIconPath": "static/tab/my-active.png"
+      }
+    ]
+  },
+  "usingComponents": {}
+}
