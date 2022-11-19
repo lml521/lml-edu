@@ -41,6 +41,7 @@
 			};
 		},
 		methods:{
+			// 修改ID 
 			lmlChangeValue(index){
 				this.$emit("input",index)
 			}
