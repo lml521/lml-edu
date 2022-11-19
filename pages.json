@@ -1,85 +1,134 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
-	{
-		// 首页
-            "path" : "pages/lml-index/lml-index",
-            "style" :                                                                                    
-            {
-				"navigationBarTextStyle":"white", //导航栏标题颜色，仅支持 black / white
-				"navigationBarBackgroundColor":"#345DC2",// 导航栏背景演示
+		{
+			// 首页
+			"path": "pages/lml-index/lml-index",
+			"style": {
+				"navigationBarTextStyle": "white", //导航栏标题颜色，仅支持 black / white
+				"navigationBarBackgroundColor": "#345DC2", // 导航栏背景演示
 				"app-plus": {
 					// "bounce":"none",//页面回弹效果，设置为 "none" 时关闭效果
-					"titleNView":{//导航栏
-					"type":"transparent",//导航栏样式。"default"-默认样式；"transparent"-滚动透明渐变；"float"-悬浮导航栏。
-					"searchInput":{//原生导航栏上的搜索框配置
-						"autoFocus":true,//是否自动获取焦点
-						"align":"center",//居中对齐
-						"placeholder":"搜索你想要的的内容",// 提示文本
-						"disabled":true,  //是否可输入
-						"placeholderColor": "#979C9D",//提示文本颜色
-						"borderRadius":"30rpx",//圆角边框
-						// 设置输入框背景颜色
-						"backgroundColor": "#F0F1F2"
-					}
-					// #ifdef APP-PLUS
-					,
-					"buttons":[{
-						"float":"right",//按钮在标题栏上的显示位置，可取值"left"、"right"
-						"fontSrc":"/static/icon/iconfont.ttf",//按钮上文字使用的字体文件路径。不支持网络地址，请统一使用本地地址。
-						"text":"\ue689",//按钮上显示的文字。使用字体图标时 unicode 字符表示必须 '\u' 开头，如 "\ue123"（注意不能写成"\e123"）。
-						"fontSize": "27",//按钮上文字大小
-						"background": "rgba(0,0,0,0)"//按钮的背景颜色，仅在标题栏type=transparent时生效
-					}]
-				// #endif
-						
+					"titleNView": { //导航栏
+						"type": "transparent", //导航栏样式。"default"-默认样式；"transparent"-滚动透明渐变；"float"-悬浮导航栏。
+						"searchInput": { //原生导航栏上的搜索框配置
+							"autoFocus": true, //是否自动获取焦点
+							"align": "center", //居中对齐
+							"placeholder": "搜索你想要的的内容", // 提示文本
+							"disabled": true, //是否可输入
+							"placeholderColor": "#979C9D", //提示文本颜色
+							"borderRadius": "30rpx", //圆角边框
+							// 设置输入框背景颜色
+							"backgroundColor": "#F0F1F2"
+						}
+						// #ifdef APP-PLUS
+						,
+						"buttons": [{
+							"float": "right", //按钮在标题栏上的显示位置，可取值"left"、"right"
+							"fontSrc": "/static/icon/iconfont.ttf", //按钮上文字使用的字体文件路径。不支持网络地址，请统一使用本地地址。
+							"text": "\ue689", //按钮上显示的文字。使用字体图标时 unicode 字符表示必须 '\u' 开头，如 "\ue123"（注意不能写成"\e123"）。
+							"fontSize": "27", //按钮上文字大小
+							"background": "rgba(0,0,0,0)" //按钮的背景颜色，仅在标题栏type=transparent时生效
+						}]
+						// #endif
+
 					}
 				}
-				
-            }
-            },{
+
+			}
+		}, {
 			// 分类
-            "path" : "pages/lml-category/lml-category",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
+			"path": "pages/lml-category/lml-category",
+			"style": {
+				"navigationBarTextStyle": "white", //导航栏标题颜色，仅支持 black / white
+				"navigationBarBackgroundColor": "#345DC2", // 导航栏背景演示
+				"navigationBarTitleText": "分类", //导航栏标题文字内容
+				"app-plus": {
+					"titleNView": {
+						"buttons": [{
+							"float": "right",
+							"fontSize": "18",
+							"background": "rgba(0,0,0,0)",
+							"fontSrc": "/static/icon/iconfont.ttf",
+							"text": "\ue608"
+						}]
+					}
+				}
+			}
+
+		}, {
 			// 阅读 
-            "path" : "pages/lml-article/lml-article",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
+			"path": "pages/lml-article/lml-article",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
 			// 问答
-            "path" : "pages/lml-question/lml-question",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-        ,{
+			"path": "pages/lml-question/lml-question",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
 			// 我的
-            "path" : "pages/lml-user/lml-user",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+			"path": "pages/lml-user/lml-user",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			// 搜索
+			"path": "pages/lml-search/lml-search",
+			"style": {
+				"app-plus": {
+					"titleNView": {
+						"autoBackButton": false,
+						"searchInput": {
+							"align": "left",
+							"placeholder": "搜索你想要的内容",
+							"borderRadius": "30rpx",
+							"backgroundColor": "#f0f1f2"
+						},
+						"buttons": [{
+							"float": "right",
+							"text": "取消",
+							"fontSize": "16",
+							"color": "#2A333B"
+						}]
+					}
+
+				}
+			}
+		}, {
+			"path": "pages/course/course-details",
+			"style": {
+				"onReachBottomDistance": 0,
+				"navigationBarBackgroundColor": "#345DC2",
+				"navigationBarTextStyle": "white",
+				"app-plus": {
+					"bounce": "none", // 禁止app回弹效果
+					"scrollIndicator": "none", // 隐藏页面滚动条（APP）
+					"titleNView": {
+						"type": "transparent"
+							// #ifdef APP-PLUS
+							,
+						"buttons": [{
+							"float": "right",
+							"type": "share"
+						}]
+						// #endif
+					}
+				}
+			}
+
+		}
+	],
 	// tabBar 数据 
 	"tabBar": {
-		"list":[
+		"list": [
 			// 首页 
 			{
 				"pagePath": "pages/lml-index/lml-index",

@@ -1,1 +1,1 @@
-<view class="lml-index-box"><search-input vue-id="3aba34c4-1" bind:__l="__l"></search-input><swiper></swiper></view>
+<view class="lml-index-box"><search-input vue-id="3aba34c4-1" bind:__l="__l"></search-input><swiper bannerList="{{lmlBannerList}}"></swiper><lml-nav vue-id="3aba34c4-2" categoryList="{{lmlCategory}}" bind:__l="__l"></lml-nav><view class="lml-list"><swiper-course vue-id="3aba34c4-3" name="热门推荐" word="HOT" courseData="{{lmlCourseList}}" bind:__l="__l"></swiper-course></view></view>

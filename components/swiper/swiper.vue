@@ -14,7 +14,7 @@
 			:duration="1000"
 				@change="lmlChangeSwiper">
 				<swiper-item class="swiper-item"   v-for="(item,index) in bannerList" :key="index">
-					<img :src="item.imageUrl" alt="">
+					<img :src="item.imageUrl" alt="" @click="navTo(`${item.advertUrl}`)">
 				</swiper-item>
 
 			</swiper>

@@ -3,6 +3,8 @@
   "navigationBarBackgroundColor": "#345DC2",
   "usingComponents": {
     "search-input": "/components/search-input/search-input",
-    "swiper": "/components/swiper/swiper"
+    "swiper": "/components/swiper/swiper",
+    "lml-nav": "/pages/lml-index/components/lml-Nav",
+    "swiper-course": "/pages/lml-index/components/swiper-course"
   }
 }

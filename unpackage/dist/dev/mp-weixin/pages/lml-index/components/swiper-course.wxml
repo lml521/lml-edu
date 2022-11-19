@@ -1,0 +1,1 @@
+<view class="box"><lml-list vue-id="3e7a6e37-1" name="{{name}}" word="{{word}}" bind:__l="__l" vue-slots="{{['default']}}">123</lml-list></view>

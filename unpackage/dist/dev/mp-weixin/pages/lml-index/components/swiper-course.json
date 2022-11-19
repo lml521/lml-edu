@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "lml-list": "/pages/lml-index/components/lml-list"
+  },
+  "component": true
+}
