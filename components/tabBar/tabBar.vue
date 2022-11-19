@@ -3,11 +3,9 @@
 	<view class="lml-tabBar" @touchmove.stop.prevent="()=>{}">
 		<view class="lml-view center">
 			<view class="lml-item" v-for="(item,index) in list" :class="{current : index === value}"
-			@click="lmlChangeValue(index)">
+				@click="lmlChangeValue(index)">
 				{{item.name}}
-
 			</view>
-
 		</view>
 
 	</view>
@@ -40,10 +38,10 @@
 
 			};
 		},
-		methods:{
+		methods: {
 			// 修改ID 
-			lmlChangeValue(index){
-				this.$emit("input",index)
+			lmlChangeValue(index) {
+				this.$emit("input", index)
 			}
 		}
 	}

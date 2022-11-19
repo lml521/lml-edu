@@ -3,7 +3,6 @@
 	<view>
 		<!-- 头部内容 -->
 		<lmlHeader :item="lmlcourseList"></lmlHeader>
-		
 		<tabBar :list="tabList" v-model.sync="index"></tabBar>
 	</view>
 </template>
