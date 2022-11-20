@@ -7,8 +7,15 @@ const  gitCourseList=(id)=>{
 		url:`/course/api/course/${id}`,
 	})
 }
+// 获取章节 数据 
+const gitSectionList=(id)=>{
+	return request({
+		url:`/course/api/chapter/section/list/${id}`
+	})
+}
 
 export default{
 	gitCourseList,
+	gitSectionList
 	
 }
