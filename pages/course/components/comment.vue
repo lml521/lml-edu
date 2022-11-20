@@ -1,30 +1,29 @@
 <template>
 	<!-- 评论 -->
-	<view class="comment-box">
-		<view class="img" v-if="!commentList || commentList.length<=0" >
+	<view class="lml-comment">
+		<view class="img" v-if="!commentList || commentList.length<=0">
 			<img src="/static/images/loading.gif" alt="">
 			<view>展无数据</view>
 		</view>
-		<view class="item" v-for="(item,index) in commentList" :key="index">
-			<view class="item-header">
-				<view class="user-img">
-					<img v-if="item.userImage" :src="item.userImage" alt="">
-					<img v-else src="/static/tab/my.png" alt="">
+		<view class="lmlItem" v-for="(item,index) in commentList" :key="index">
+			<view class="lmlHeader">
+				<view class="lmlImg">
+					<img :src="item.userImage || '/static/tab/my.png'" alt="">
 				</view>
-				<view class="userInfo">
+				<view class="lmlUserInfo">
 					<h3>{{item.nickName}}</h3>
-					<view class="time">
+					<view class="lmlTime">
 						{{item.createDate}}
 					</view>
 
 				</view>
 				<i class="iconfont icon-haoping2 red" :class="{grey:item.isGood==0}"></i>
 			</view>
-			<view class="peview">
+			<view class="lmlPeview">
 				{{item.content}}
 			</view>
 
-			<view class="lecturer" v-if="item.children">
+			<view class="lmlLecturer" v-if="item.children">
 				讲师回复：{{item.children.content}}
 
 			</view>
@@ -81,12 +80,12 @@
 </script>
 
 <style lang="scss">
-	.comment-box {
-		.item {
+	.lml-comment {
+		.lmlItem {
 			margin-top: 19px;
 			border-bottom: .5px solid #efeff4;
 
-			.item-header {
+			.lmlHeader {
 				position: relative;
 				display: -webkit-box;
 				display: -webkit-flex;
@@ -95,7 +94,7 @@
 				-webkit-align-items: center;
 				align-items: center;
 
-				.user-img {
+				.lmlImg {
 					margin: 20rpx;
 					width: 100rpx;
 					height: 100rpx;
@@ -108,8 +107,8 @@
 					}
 				}
 
-				.userInfo {
-					.time {
+				.lmlUserInfo {
+					.lmlTime {
 						font-size: 36rpx;
 						color: #666;
 					}
@@ -127,10 +126,11 @@
 
 			}
 
-			.peview {
+			.lmlPeview {
 				padding: 0 30rpx 10rpx 30rpx;
 			}
-			.lecturer{
+
+			.lmlLecturer {
 				margin: 10rpx 30rpx;
 				background-color: #f8f9fb;
 				color: #a8acb5;
@@ -138,10 +138,12 @@
 			}
 		}
 	}
-.img{
-	text-align: center;
-	margin-top: 200rpx;
-}
+
+	.img {
+		text-align: center;
+		margin-top: 200rpx;
+	}
+
 	.grey {
 		color: grey !important;
 	}

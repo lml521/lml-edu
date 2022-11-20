@@ -13,7 +13,11 @@
 						<Img :detailUrls="lmlcourseList.detailUrls" v-if="i==0"></Img>
 						<!-- 章节 -->
 						<Section  v-if="i==1" :sectionList="lmlSectionList" ></Section>
+						<!-- 评论 -->
+						<comment v-if="i==2" :commentList="lmlcommentList"></comment>
 						
+						<!-- 套餐 -->
+						<courseGroup v-else-if="index === 3" :groupList="lmlgroupList"></courseGroup>
 					</scroll-view>
 				</swiper-item>
 			</swiper>
@@ -29,6 +33,9 @@
 	import tabBar from '@/components/tabBar/tabBar.vue' //tabBar 组件
 	import Img from '@/pages/course/components/image.vue'//详情 图片
 	import Section from "@/pages/course/components/section.vue"//章节
+	
+	import comment from '@/pages/course/components/comment.vue'//评论
+	import courseGroup from '@/pages/course/components/courseGroup.vue'
 	import tabList from '@/config/details-tab.js'//tabBar 数据
 	import detailsApi from '@/api/details.js'//详情页api
 	export default {
@@ -36,13 +43,17 @@
 			lmlHeader,
 			tabBar,
 			Img,
-			Section
+			Section,
+			comment,
+			courseGroup
 		},
 		data() {
 			return {
 				courseId: null, // id
 				lmlcourseList: {}, //详情页 信息
 				lmlSectionList:[],//
+				lmlcommentList:[],
+				lmlgroupList:[],
 				tabList,
 				index: 0,
 				pageHeight: 300,
@@ -57,6 +68,8 @@
 		created() {
 			this.gitCourseList()
 			this.gitSectionList()
+			this.gitcommentList()
+			this.gitgroupList()
 		},
 		methods: {
 			// 设置 ID
@@ -72,6 +85,16 @@
 			async gitSectionList() {
 				this.lmlSectionList = await detailsApi.gitSectionList(this.courseId)
 				console.log(this.lmlSectionList)
+			},
+			// 获取评论 数据
+			async gitcommentList() {
+				this.lmlcommentList = await detailsApi.gitcommentList(this.courseId)
+				console.log(this.lmlcommentList)
+			},
+			// 获取 套餐 数据  /course/api/group/list/null
+			async gitgroupList() {
+				this.lmlgroupList = await detailsApi.gitgroupList(this.courseId)
+				console.log(this.lmlgroupList)
 			},
 			// 修改 轮播 Index
 			lmlChangeIndex(e) {

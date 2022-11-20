@@ -14,8 +14,21 @@ const gitSectionList=(id)=>{
 	})
 }
 
+const gitcommentList=(id)=>{
+	return request({
+		url:`/course/api/comment/list/${id}`
+	})
+}
+
+const gitgroupList=(id)=>{
+	return request({
+		url:`/course/api/group/list/${id}`
+	})
+}
+
 export default{
 	gitCourseList,
-	gitSectionList
-	
+	gitSectionList,
+	gitcommentList,
+	gitgroupList,
 }
