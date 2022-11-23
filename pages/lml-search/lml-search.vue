@@ -2,17 +2,17 @@
 	<!-- 搜索页面 -->
 	<view>
 		<!-- 热门推荐 历史记录 -->
-		<lmlKeyWord @TagHandler="TagHandler" v-if="!searched"></lmlKeyWord>
+		<lmlKeyWord @TagHandler="lmlTagHandler" v-if="!searched"></lmlKeyWord>
 		
 		<tabBar  v-model.sync="tabIndex" v-if="searched"></tabBar>
 		
 		<block v-if="searched">
-					<course-list ref="mescrollItem0" :i="0" 
-					:index="tabIndex" :params="params" :content="content"></course-list>
-					<article-list ref="mescrollItem1" :i="1" :index="tabIndex" :params="params" :content="content">
-					</article-list>
-					<question-list ref="mescrollItem2" :i="2" :index="tabIndex" :params="params" :content="content">
-					</question-list>
+					<courseList ref="mescrollItem0" :i="0" 
+					:index="tabIndex" :params="params" :content="content"></courseList>
+					<articleList ref="mescrollItem1" :i="1" :index="tabIndex" :params="params" :content="content">
+					</articleList>
+					<questionList ref="mescrollItem2" :i="2" :index="tabIndex" :params="params" :content="content">
+					</questionList>
 				</block>
 
 	</view>
@@ -21,11 +21,17 @@
 <script>
 	let history = 'history'
 	import lmlKeyWord from '@/pages/lml-search/components/lml-keyword.vue'//热门推荐 历史记录
-	import tabBar from '@/components/tabBar/tabBar.vue'
+	import tabBar from '@/components/tabBar/tabBar.vue'//tabBar
+	import courseList from '@/pages/lml-search/components/course-list.vue'
+	import articleList  from '@/pages/lml-search/components/article-list.vue'
+	import questionList  from '@/pages/lml-search/components/question-list.vue'
 	export default {
 		components: {
 			lmlKeyWord,
-			tabBar
+			tabBar,
+			courseList,
+			articleList,
+			questionList
 		},
 		data() {
 			return {
@@ -54,7 +60,7 @@
 				this.params = JSON.parse(option.params)
 				console.log('params', this.params)
 				// 有参数，则开始搜索
-				this.TagHandler()
+				this.lmlTagHandler()
 			} else {
 				// #ifdef APP-PLUS
 				currentWebview.setTitleNViewSearchInputFocus(true)
@@ -72,19 +78,15 @@
 			this.content = e.text
 		},
 		methods: {
-			TagHandler(obj) {
+			lmlTagHandler(obj) {
 
 				
 				this.content = obj && obj.value ? obj.value : this.content
 				this.searched = true
 				this.storageHistory()
-				// this.$nextTick(() => {
-				// 	this.$util.throttle(() => {
-				// 		this.$refs[`mescrollItem${this.tabIndex}`].search()
-				// 	})
-				// })
+				
 			},
-			// 关键字保存本地 ++++++++++++++
+			// 关键字保存
 			storageHistory() {
 				const key = 'historyList'
 				uni.getStorage	({
@@ -119,37 +121,6 @@
 					}
 				})
 			},
-
-
-			// storageHistory() {
-			// 	const key = 'history_list'
-			// 	uni.getStorage({
-			// 		key, // 等价于 key: key,
-			// 		success: (res) => { //注意箭头函数
-			// 			// console.log('获取成功', res.data);
-			// 			// 查询到原历史记录，当前输入的是否存在，不存在添加到第1个元素，存在
-			// 			不添加
-			// 			this.content && res.data.indexOf(this.content) < 0 &&
-			// 				res.data.unshift(this.content)
-			// 			// 保存到历史记录
-			// 			uni.setStorageSync(key, res.data)
-			// 		},
-			// 		fail: (error) => { //注意箭头函数
-			// 			// 没有历史数据。
-			// 			// 当前有输入内容，直接保存，注意是数组
-			// 			this.content && uni.setStorageSync(key, [this.content])
-			// 		}
-			// 	})
-			// },
-
-
-
-
-
-
-
-
-
 
 		}
 	}

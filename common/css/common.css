@@ -39,6 +39,7 @@ image {
 /* #endif */
 
 /* 布局 */
+/* 盒子 居中 */
 .center{
 	/* #ifndef APP-PLUS-NVUE */
 	display:flex;
@@ -46,12 +47,14 @@ image {
 	align-items: center;
 	justify-content: center;
 }
+/* 横向从左到右排列 */
 .row{
 	/* #ifndef APP-PLUS-NVUE */
 	display:flex;
 	/* #endif */
 	flex-direction: row;
 }
+/* 纵向排列 */
 .column{
 	/* #ifndef APP-PLUS-NVUE */
 	display:flex;
@@ -59,6 +62,7 @@ image {
 	flex-direction: column;
 }
 
+/* 平均分布在该行上 */
 .space-between {
 	/* #ifndef APP-PLUS-NVUE */
 	display:flex;
@@ -66,7 +70,7 @@ image {
 	flex-direction: row;
 	justify-content: space-between;
 }
-
+/* 分均分 1份 */
 .one{
 	flex: 1;
 }
@@ -91,10 +95,10 @@ image {
 		display: none;
 	}
 /* #endif */
-
+/* 两行省略小圆点 */
 .text-ellipsis {
 	overflow: hidden;
-	text-overflow: ellipsis; //显示省略号
+	text-overflow: ellipsis; //显示省略小圆点
 	-webkit-line-clamp: 2; //最多2行
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
