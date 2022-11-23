@@ -68,21 +68,20 @@
 			created() {
 				this.downBarList = this.downBars
 			},
-			// watch: {
-			// 	params: {
-			// 		handler(newVal, oldVal) {
-			// 			if (newVal) {
-			// 				const obj = this.downBars[this.downBars.length - 1]
-			// 				obj.name = newVal.labelName
-			// 				obj.id = newVal.labelId
-			// 				obj.activeIndex = newVal.activeIndex
-			// 			}
-
-			// 		},
-			// 		immediate: true,
-			// 		deep: true
-			// 	}
-			// },
+			watch: {
+				params: {
+					handler(newVal, oldVal) {
+						if (newVal) {
+							const obj = this.downBars[this.downBars.length - 1]
+							obj.name = newVal.labelName
+							obj.id = newVal.labelId
+							obj.activeIndex = newVal.activeIndex
+						}
+					},
+					immediate: true,
+					deep: true
+				}
+			},
 			
 			methods: {
 				

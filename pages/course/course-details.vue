@@ -6,16 +6,16 @@
 
 		<view class="lmlDetails" :style="{height : pageHeight + 'px'}">
 			<tabBar :list="tabList" v-model.sync="index"></tabBar>
-			<swiper :indicator-dots="true" 	circular :current="index" @change="lmlChangeIndex">
+			<swiper :indicator-dots="true" circular :current="index" @change="lmlChangeIndex">
 				<swiper-item v-for="(ele,i) in 4" :key="i">
-					<scroll-view scroll-y="true">
+					<scroll-view  class="scroll-view" :scroll-y="true">
 						<!-- 详情 -->
 						<Img :detailUrls="lmlcourseList.detailUrls" v-if="i==0"></Img>
 						<!-- 章节 -->
-						<Section  v-if="i==1" :sectionList="lmlSectionList" ></Section>
+						<Section v-if="i==1" :sectionList="lmlSectionList"></Section>
 						<!-- 评论 -->
 						<comment v-if="i==2" :commentList="lmlcommentList"></comment>
-						
+
 						<!-- 套餐 -->
 						<courseGroup v-else-if="index === 3" :groupList="lmlgroupList"></courseGroup>
 					</scroll-view>
@@ -31,13 +31,13 @@
 <script>
 	import lmlHeader from '@/pages/course/components/lml-header.vue' //详情头部
 	import tabBar from '@/components/tabBar/tabBar.vue' //tabBar 组件
-	import Img from '@/pages/course/components/image.vue'//详情 图片
-	import Section from "@/pages/course/components/section.vue"//章节
-	
-	import comment from '@/pages/course/components/comment.vue'//评论
+	import Img from '@/pages/course/components/image.vue' //详情 图片
+	import Section from "@/pages/course/components/section.vue" //章节
+
+	import comment from '@/pages/course/components/comment.vue' //评论
 	import courseGroup from '@/pages/course/components/courseGroup.vue'
-	import tabList from '@/config/details-tab.js'//tabBar 数据
-	import detailsApi from '@/api/details.js'//详情页api
+	import tabList from '@/config/details-tab.js' //tabBar 数据
+	import detailsApi from '@/api/details.js' //详情页api
 	export default {
 		components: {
 			lmlHeader,
@@ -51,12 +51,13 @@
 			return {
 				courseId: null, // id
 				lmlcourseList: {}, //详情页 信息
-				lmlSectionList:[],//
-				lmlcommentList:[],
-				lmlgroupList:[],
+				lmlSectionList: [], //
+				lmlcommentList: [],
+				lmlgroupList: [],
 				tabList,
 				index: 0,
 				pageHeight: 300,
+				
 			};
 		},
 
@@ -72,18 +73,18 @@
 			this.gitgroupList()
 		},
 		onReady() {
-		
-				const view = uni.createSelectorQuery().in(this).select('.lmlDetails')
-				console.log("view=>", view)
-				view.fields({
-					rect: true
-				}, (data) => {
-					console.log("data=>", data)
-					this.detailTop = data.top
-				}).exec();
-		
-		
-			},
+
+			const view = uni.createSelectorQuery().in(this).select('.lmlDetails')
+			console.log("view=>", view)
+			view.fields({
+				rect: true
+			}, (data) => {
+				console.log("data=>", data)
+				this.detailTop = data.top
+			}).exec();
+
+
+		},
 		methods: {
 			// 设置 ID
 			getCourseId(id) {
@@ -93,6 +94,9 @@
 			async gitCourseList() {
 				this.lmlcourseList = await detailsApi.gitCourseList(this.courseId)
 				console.log(this.lmlcourseList)
+				uni.setNavigationBarTitle({
+									title: this.lmlcourseList.title
+								})
 			},
 			// 获取章节 数据 
 			async gitSectionList() {
@@ -114,7 +118,7 @@
 				this.index = e.detail.current
 			},
 
-
+		
 
 			getPageHeight() {
 				// 获取系统信息
@@ -134,6 +138,7 @@
 				}
 
 				this.pageHeight = res.windowHeight - this.statusNavHeight
+				console.log(this.pageHeight)
 			}
 
 
@@ -143,7 +148,7 @@
 
 <style lang="scss">
 	.lmlDetails {
-	padding-bottom: 120rpx;
+		padding-bottom: 120rpx;
 		overflow: hidden;
 
 		swiper,
@@ -156,14 +161,16 @@
 			padding-bottom: 180rpx;
 		}
 	}
-	.lmlBtn{
+
+	.lmlBtn {
 		width: 100%;
 		height: 110rpx;
 		background-color: #fff;
 		position: fixed;
 		left: 0;
 		bottom: -0;
-		button{
+
+		button {
 			width: 90%;
 			margin-top: 10rpx;
 			background-color: #345dc2;

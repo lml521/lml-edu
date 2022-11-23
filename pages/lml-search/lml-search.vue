@@ -6,7 +6,8 @@
 		
 		<tabBar  v-model.sync="tabIndex" v-if="searched"></tabBar>
 		
-		<block v-if="searched">
+		<block v-if="searched" class="block">
+	
 					<courseList ref="mescrollItem0" :i="0" 
 					:index="tabIndex" :params="params" :content="content"></courseList>
 					<articleList ref="mescrollItem1" :i="1" :index="tabIndex" :params="params" :content="content">
@@ -25,7 +26,10 @@
 	import courseList from '@/pages/lml-search/components/course-list.vue'
 	import articleList  from '@/pages/lml-search/components/article-list.vue'
 	import questionList  from '@/pages/lml-search/components/question-list.vue'
+	// import MescrollMoreMixin from "@/uni_modules/mescroll-uni/components/mescroll-uni/mixins/mescroll-more.js"
+	import MescrollMoreMixin from "@/uni_modules/mescroll-uni/components/mescroll-uni/mixins/mescroll-more.js"
 	export default {
+			mixins: [MescrollMoreMixin],
 		components: {
 			lmlKeyWord,
 			tabBar,
@@ -48,12 +52,14 @@
 				this.navBack()
 			}
 		},
+		
+		
+			
 		onLoad(option) {
 
 			// #ifdef APP-PLUS
 			let currentWebview = this.$mp.page.$getAppWebview()
 			// #endif
-			console.log(option, 5)
 			// 获取其他页面跳转过来带的参数，
 			if (option.params) {
 				// 转换对象
@@ -79,8 +85,6 @@
 		},
 		methods: {
 			lmlTagHandler(obj) {
-
-				
 				this.content = obj && obj.value ? obj.value : this.content
 				this.searched = true
 				this.storageHistory()
