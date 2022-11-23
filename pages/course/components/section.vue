@@ -67,7 +67,8 @@
 			}
 			
 			.lmlSee{
-				float: right;
+				position: absolute;
+				right: 30rpx;
 				font-size: 26rpx;
 				color: #1b88ff;
 			}

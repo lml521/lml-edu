@@ -11,7 +11,7 @@
 		</scroll-view>
 		<scroll-view class="lml-right noScorll" scroll-y="true">
 			<view class="lml-item">
-				<view v-for="(item,index) in listAll">
+				<view v-for="(item,index) in listAll" @click="lmlhandelSearch(item)">
 					{{item.name}}
 				</view>
 			</view>
@@ -52,7 +52,36 @@
 			lmlchangeActive(index) {
 				this.activeIndex = index
 				this.listAll = this.categoryList[index].labelList
-			}
+			},
+
+			// 点击每一项跳转  搜索 页面 
+			lmlhandelSearch(item) {
+				// console.log(item, this.value, 5)
+				// if (this.value) {
+				// 	this.handleSetSearch(item)
+				// 	return
+				// }
+
+				this.navTo(
+					`/pages/lml-search/lml-search?labelId=${item.id}&labelName=${item.name}&activeIndex=${this.activeIndex}`
+					)
+									this.handleSetSearch(item.name)
+			},
+
+			searchPageChangeLabel(item) {
+				if (this.value.name !== item.name && this.value.name !== item.cname) {
+					// 赋值给搜索面显示名称，如果有分类名就取分类名，没有就取标签名
+					this.value.name = item.cname || item.name
+					// 标签id
+					this.value.id = item.id || null
+					// 分类id (点击`不限`是分类id，)
+					this.value.categoryId = item.categoryId || null
+					// 解决父组件，搜索新数据
+					this.$emit('searchByLabel', this.value)
+				}
+				this.value.active = false
+
+			},
 		}
 	}
 </script>

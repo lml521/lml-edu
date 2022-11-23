@@ -15,17 +15,14 @@
 					<view class="lmlTime">
 						{{item.createDate}}
 					</view>
-
 				</view>
 				<i class="iconfont icon-haoping2 red" :class="{grey:item.isGood==0}"></i>
 			</view>
 			<view class="lmlPeview">
 				{{item.content}}
 			</view>
-
 			<view class="lmlLecturer" v-if="item.children">
 				讲师回复：{{item.children.content}}
-
 			</view>
 
 		</view>
@@ -81,6 +78,7 @@
 
 <style lang="scss">
 	.lml-comment {
+		padding-bottom: 120rpx;
 		.lmlItem {
 			margin-top: 19px;
 			border-bottom: .5px solid #efeff4;

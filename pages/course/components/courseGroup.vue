@@ -93,6 +93,9 @@
 </script>
 
 <style lang="scss">
+	.group{
+		padding-bottom: 120rpx;
+	}
 	.group-item{
 	margin: 18px 15px;
     background-color: #fff;

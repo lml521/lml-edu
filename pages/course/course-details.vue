@@ -71,6 +71,19 @@
 			this.gitcommentList()
 			this.gitgroupList()
 		},
+		onReady() {
+		
+				const view = uni.createSelectorQuery().in(this).select('.lmlDetails')
+				console.log("view=>", view)
+				view.fields({
+					rect: true
+				}, (data) => {
+					console.log("data=>", data)
+					this.detailTop = data.top
+				}).exec();
+		
+		
+			},
 		methods: {
 			// 设置 ID
 			getCourseId(id) {
@@ -130,7 +143,7 @@
 
 <style lang="scss">
 	.lmlDetails {
-
+	padding-bottom: 120rpx;
 		overflow: hidden;
 
 		swiper,

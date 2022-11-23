@@ -15,7 +15,7 @@ const request = (options) => {
 				}
 			},
 			fail: (error) => {
-				rejects(error)
+				reject(error)
 			}
 		})
 	})

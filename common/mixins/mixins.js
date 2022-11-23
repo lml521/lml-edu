@@ -26,9 +26,9 @@ export default {
 				delta
 			})
 		},
-		
+		// handelSetSearch handleSetSearch
 		// 设置搜索框的默认值
-		handleSetSearchValue(item){
+		handleSetSearch(item){
 			if(item){
 				// #ifdef APP-PLUS
 				// APP设置搜索框的值
